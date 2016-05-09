@@ -1,0 +1,55 @@
+{
+    "config": {
+        "cache-files-ttl": 0,
+        "discard-changes": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": false,
+    "provide": {
+        "heroku-sys\/cedar": "14.2016.05.09"
+    },
+    "require": {
+        "composer.json\/composer.lock": "dev-6eff9a2ed7d1751f27bc0fd0c7f1c49e",
+        "heroku-sys\/php": "^5.5.17",
+        "heroku-sys\/apache": "^2.4.10",
+        "heroku-sys\/nginx": "~1.8.0",
+        "heroku-sys/ext-newrelic": "*"
+    },
+    "repositories": [
+        {
+            "packagist": false
+        },
+        {
+            "type": "path",
+            "url": "\/app\/tmp\/buildpacks\/php\/support\/installer\/",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "composer",
+            "url": "https:\/\/lang-php.s3.amazonaws.com\/dist-cedar-14-stable\/"
+        },
+        {
+            "type": "package",
+            "package": [
+                {
+                    "type": "metapackage",
+                    "name": "composer.json\/composer.lock",
+                    "version": "dev-6eff9a2ed7d1751f27bc0fd0c7f1c49e",
+                    "require": {
+                        "heroku-sys\/ext-gd": "*",
+                        "heroku-sys\/ext-curl": "*",
+                        "heroku-sys\/ext-mcrypt": "*",
+                        "heroku-sys\/ext-zlib": "*",
+                        "heroku-sys\/ext-zip": "*",
+                        "heroku-sys\/ext-soap": "*"
+                    },
+                    "replace": [],
+                    "provide": [],
+                    "conflict": []
+                }
+            ]
+        }
+    ]
+}
